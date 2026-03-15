@@ -25,3 +25,7 @@ define('DB_PREFIX', 'ps_');
 define('APP_NAME', 'Hệ Thống Quản Lý Cầm Đồ');
 define('APP_VERSION', '1.0.0');
 define('INTEREST_RATE', 3);
+define('MAX_UPLOAD_SIZE', 5 * 1024 * 1024); // 5MB
+define('MAX_DAILY_PAYMENT_PERIODS', 500);
+define('MAX_WEEKLY_PAYMENT_PERIODS', 200);
+define('MAX_MONTHLY_PAYMENT_PERIODS', 120);

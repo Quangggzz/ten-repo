@@ -41,7 +41,7 @@ class LichThuLaiModel extends \MVC\Model {
                 while ($current <= $endDate) {
                     $records[] = [$hopDongId, $ky++, $current->format('Y-m-d'), round($dailyRate, 0)];
                     $current->modify('+1 day');
-                    if ($ky > 500) break;
+                    if ($ky > MAX_DAILY_PAYMENT_PERIODS) break;
                 }
                 break;
 
@@ -51,7 +51,7 @@ class LichThuLaiModel extends \MVC\Model {
                 while ($current <= $endDate) {
                     $records[] = [$hopDongId, $ky++, $current->format('Y-m-d'), round($weeklyRate, 0)];
                     $current->modify('+7 days');
-                    if ($ky > 200) break;
+                    if ($ky > MAX_WEEKLY_PAYMENT_PERIODS) break;
                 }
                 break;
 
@@ -61,7 +61,7 @@ class LichThuLaiModel extends \MVC\Model {
                 while ($current <= $endDate) {
                     $records[] = [$hopDongId, $ky++, $current->format('Y-m-d'), round($monthlyInterest, 0)];
                     $current->modify('+1 month');
-                    if ($ky > 120) break;
+                    if ($ky > MAX_MONTHLY_PAYMENT_PERIODS) break;
                 }
                 break;
 

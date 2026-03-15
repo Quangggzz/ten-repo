@@ -25,10 +25,10 @@ function tinhTienLai() {
 }
 
 // Add item row for contract creation
-var itemIndex = 1;
+var pawItemIndex = 1;
 function themMonCam() {
-    itemIndex++;
-    var html = '<div class="row g-2 mt-1 item-row" id="item-' + itemIndex + '">' +
+    pawItemIndex++;
+    var html = '<div class="row g-2 mt-1 item-row" id="paw-item-' + pawItemIndex + '">' +
         '<div class="col-md-3"><input type="text" name="ten_mon[]" class="form-control form-control-sm" placeholder="Tên món *" required></div>' +
         '<div class="col-md-2"><select name="loai_mon[]" class="form-select form-select-sm">' +
         '<option value="vang">Vàng</option><option value="xe">Xe</option><option value="dien_thoai">Điện thoại</option>' +
@@ -38,13 +38,13 @@ function themMonCam() {
         '<div class="col-md-2"><select name="tinh_trang[]" class="form-select form-select-sm">' +
         '<option value="tot">Tốt</option><option value="kha">Khá</option><option value="trung_binh">Trung bình</option></select></div>' +
         '<div class="col-md-1"><input type="text" name="mo_ta_mon[]" class="form-control form-control-sm" placeholder="Ghi chú"></div>' +
-        '<div class="col-md-1"><button type="button" class="btn btn-sm btn-danger" onclick="xoaMonCam(' + itemIndex + ')"><i class="fas fa-times"></i></button></div>' +
+        '<div class="col-md-1"><button type="button" class="btn btn-sm btn-danger" onclick="xoaMonCam(\'paw-item-' + pawItemIndex + '\')"><i class="fas fa-times"></i></button></div>' +
         '</div>';
     document.getElementById('mon-cam-list').insertAdjacentHTML('beforeend', html);
 }
 
-function xoaMonCam(idx) {
-    var el = document.getElementById('item-' + idx);
+function xoaMonCam(id) {
+    var el = document.getElementById(id);
     if (el) el.remove();
 }
 </script>

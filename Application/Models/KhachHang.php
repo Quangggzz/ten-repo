@@ -15,8 +15,8 @@ class KhachHangModel extends \MVC\Model {
     }
 
     public function search($keyword) {
-        $keyword = $this->db->escape($keyword);
-        return $this->db->query("SELECT * FROM {$this->table} WHERE ho_ten LIKE '%{$keyword}%' OR cmnd LIKE '%{$keyword}%' OR sdt LIKE '%{$keyword}%' ORDER BY id DESC");
+        $param = '%' . $keyword . '%';
+        return $this->db->query("SELECT * FROM {$this->table} WHERE ho_ten LIKE ? OR cmnd LIKE ? OR sdt LIKE ? ORDER BY id DESC", [$param, $param, $param]);
     }
 
     public function create($data) {

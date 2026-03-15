@@ -26,7 +26,7 @@ class HinhAnhModel extends \MVC\Model {
         $result = ['success' => [], 'errors' => []];
 
         $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-        $maxSize = 5 * 1024 * 1024; // 5MB
+        $maxSize = MAX_UPLOAD_SIZE;
 
         $uploadDir = UPLOAD . 'hop_dong_' . $hopDongId . '/';
         $thumbDir = $uploadDir . 'thumbs/';

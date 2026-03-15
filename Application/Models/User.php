@@ -5,8 +5,7 @@ class UserModel extends \MVC\Model {
     protected $table = 'ps_users';
 
     public function authenticate($username, $password) {
-        $username = $this->db->escape($username);
-        $result = $this->db->query("SELECT * FROM {$this->table} WHERE username = '{$username}' LIMIT 1");
+        $result = $this->db->query("SELECT * FROM {$this->table} WHERE username = ? LIMIT 1", [$username]);
         if ($result && count($result) > 0) {
             $user = $result[0];
             if (password_verify($password, $user['password'])) {
